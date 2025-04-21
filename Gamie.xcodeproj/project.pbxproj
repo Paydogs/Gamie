@@ -6,6 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		687D16402DB6DEB00070A817 /* BitCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 687D163F2DB6DEB00070A817 /* BitCollections */; };
+		687D16422DB6DEB00070A817 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 687D16412DB6DEB00070A817 /* Collections */; };
+		687D16442DB6DEB00070A817 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 687D16432DB6DEB00070A817 /* DequeModule */; };
+		687D16462DB6DEB00070A817 /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 687D16452DB6DEB00070A817 /* HashTreeCollections */; };
+		687D16482DB6DEB00070A817 /* HeapModule in Frameworks */ = {isa = PBXBuildFile; productRef = 687D16472DB6DEB00070A817 /* HeapModule */; };
+		687D164A2DB6DEB00070A817 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 687D16492DB6DEB00070A817 /* OrderedCollections */; };
+		687D164C2DB6DEB00070A817 /* _RopeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 687D164B2DB6DEB00070A817 /* _RopeModule */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		6874A53C2D995A2600D6DC58 /* Gamie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gamie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +33,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				687D16422DB6DEB00070A817 /* Collections in Frameworks */,
+				687D16482DB6DEB00070A817 /* HeapModule in Frameworks */,
+				687D164A2DB6DEB00070A817 /* OrderedCollections in Frameworks */,
+				687D16402DB6DEB00070A817 /* BitCollections in Frameworks */,
+				687D16462DB6DEB00070A817 /* HashTreeCollections in Frameworks */,
+				687D16442DB6DEB00070A817 /* DequeModule in Frameworks */,
+				687D164C2DB6DEB00070A817 /* _RopeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +82,13 @@
 			);
 			name = Gamie;
 			packageProductDependencies = (
+				687D163F2DB6DEB00070A817 /* BitCollections */,
+				687D16412DB6DEB00070A817 /* Collections */,
+				687D16432DB6DEB00070A817 /* DequeModule */,
+				687D16452DB6DEB00070A817 /* HashTreeCollections */,
+				687D16472DB6DEB00070A817 /* HeapModule */,
+				687D16492DB6DEB00070A817 /* OrderedCollections */,
+				687D164B2DB6DEB00070A817 /* _RopeModule */,
 			);
 			productName = Gamie;
 			productReference = 6874A53C2D995A2600D6DC58 /* Gamie.app */;
@@ -94,6 +118,9 @@
 			);
 			mainGroup = 6874A5332D995A2600D6DC58;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				687D163E2DB6DEB00070A817 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6874A53D2D995A2600D6DC58 /* Products */;
 			projectDirPath = "";
@@ -319,6 +346,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		687D163E2DB6DEB00070A817 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		687D163F2DB6DEB00070A817 /* BitCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 687D163E2DB6DEB00070A817 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = BitCollections;
+		};
+		687D16412DB6DEB00070A817 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 687D163E2DB6DEB00070A817 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		687D16432DB6DEB00070A817 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 687D163E2DB6DEB00070A817 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		687D16452DB6DEB00070A817 /* HashTreeCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 687D163E2DB6DEB00070A817 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = HashTreeCollections;
+		};
+		687D16472DB6DEB00070A817 /* HeapModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 687D163E2DB6DEB00070A817 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = HeapModule;
+		};
+		687D16492DB6DEB00070A817 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 687D163E2DB6DEB00070A817 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		687D164B2DB6DEB00070A817 /* _RopeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 687D163E2DB6DEB00070A817 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = _RopeModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6874A5342D995A2600D6DC58 /* Project object */;
 }

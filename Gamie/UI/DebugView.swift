@@ -8,16 +8,22 @@
 import SwiftUI
 
 struct DebugView: View {
-    @ObservedObject var stats: GameLoopStats
+    @ObservedObject var gameLoopStats: GameLoopStats
+    @ObservedObject var environmentStats: EnvironmentStats
     
-    init(stats: GameLoopStats) {
-        self.stats = stats
+    init(gameLoopStats: GameLoopStats,
+         environmentStats: EnvironmentStats) {
+        self.gameLoopStats = gameLoopStats
+        self.environmentStats = environmentStats
     }
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Fps: \(stats.fps)")
-            Text("Ticks per second: \(stats.ticksPerSecond)")
+            Text("Fps: \(gameLoopStats.fps)")
+            Text("Ticks: \(gameLoopStats.ticks)")
+            Text("Ticks per second: \(gameLoopStats.ticksPerSecond)")
+            Divider()
+            Text("Entity count: \(environmentStats.entityCount)")
         }
         .padding()
         .frame(minWidth: 200, minHeight: 100)
