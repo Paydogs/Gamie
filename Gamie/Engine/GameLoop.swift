@@ -93,5 +93,9 @@ class GameLoop: NSObject {
             tickDeltaCount = 0
             lastTickTime = now
         }
+        
+        renderer.clear()
+        environment.collectRenderDescriptors()
+        renderer.render(descriptors: environment.descriptors)
     }
 }

@@ -14,9 +14,11 @@ struct SpriteKitRenderView: NSViewRepresentable {
     func makeNSView(context: Context) -> some SKView {
         let skView = SKView()
         skView.presentScene(scene)
+        skView.preferredFramesPerSecond = 120
         skView.ignoresSiblingOrder = true
-        skView.showsFPS = false
-        skView.showsNodeCount = false
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        skView.showsDrawCount = true
         
         return skView
     }

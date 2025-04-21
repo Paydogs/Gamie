@@ -13,6 +13,21 @@ class Environment: NSObject, EntityHandler, Updatable {
     let stats = EnvironmentStats()
     private(set) var entityLibrary: OrderedDictionary<UUID, Entity> = .init()
     
+    private var renderDescriptors: [RenderDescriptor] = []
+    
+    func collectRenderDescriptors() {
+        renderDescriptors.removeAll(keepingCapacity: true)
+        for entity in entityLibrary.values {
+            renderDescriptors.append(entity.renderDescriptor)
+        }
+        
+        renderDescriptors.sort { $0.zIndex < $1.zIndex }
+    }
+    
+    var descriptors: [RenderDescriptor] {
+        renderDescriptors
+    }
+    
     func addEntity(_ entity: Entity) {
         print("[Environment] adding entity: \(entity)")
         entityLibrary[entity.id] = entity

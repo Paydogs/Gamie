@@ -14,6 +14,9 @@ protocol Renderer {
     /// Submit a sprite for drawing at a given position and z‑order
     func draw(sprite: SKTexture, at position: CGPoint, zPosition: CGFloat)
     
+    /// Other rendering method
+    func render(descriptors: [RenderDescriptor])
+    
     /// Flush or present the frame (no‑op for SpriteKit)
     func present()
 }
@@ -34,10 +37,20 @@ class SpriteKitRenderer: Renderer {
     }
     
     func draw(sprite: SKTexture, at position: CGPoint, zPosition: CGFloat) {
-        let node = SKSpriteNode(texture: sprite)
+//        let node = SKSpriteNode(texture: sprite)
+        let node = SKShapeNode(rect: .init(origin: position, size: .init(width: 32, height: 32)))
+        node.fillColor = .magenta
+        node.strokeColor = .clear
         node.position = position
         node.zPosition = zPosition
+//        node.size = .init(width: 32, height: 32)
         scene.addChild(node)
+    }
+    
+    func render(descriptors: [RenderDescriptor]) {
+        for renderDescriptor in descriptors {
+            draw(sprite: SKTexture(imageNamed: renderDescriptor.spriteName), at: renderDescriptor.position, zPosition: renderDescriptor.zIndex)
+        }
     }
     
     func present() {

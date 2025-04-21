@@ -16,9 +16,8 @@ struct GamieApp: App {
     let gameLoop: GameLoop
     let environment: Environment
     let renderer: Renderer
-    private let scene = SKScene(size: .init(width: 800, height: 600))
+    private let scene = SKScene(size: .init(width: 1920, height: 1080))
 
-    
     init() {
         self.renderer = SpriteKitRenderer(scene: scene)
         self.environment = Environment()
@@ -44,7 +43,9 @@ struct GamieApp: App {
             }
             CommandGroup(after: .appInfo) {
                 Button("Add entity") {
-                    environment.addEntity(.init())
+                    let entity = Entity()
+                    entity.position = .init(x: 960, y: 540)
+                    environment.addEntity(entity)
                 }
                 .keyboardShortcut("A", modifiers: [.command, .shift])
             }

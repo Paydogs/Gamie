@@ -10,5 +10,5 @@ import Foundation
 struct RenderDescriptor {
   let spriteName: String
   let position: CGPoint
-  let zIndex: Int
+  let zIndex: CGFloat
 }
